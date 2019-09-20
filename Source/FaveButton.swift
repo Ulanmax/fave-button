@@ -74,13 +74,21 @@ open class FaveButton: UIButton {
         }
     }
     
-    convenience public init(frame: CGRect, faveIconNormal: UIImage?) {
+    convenience public init(frame: CGRect, faveIconNormal: UIImage?, normalColor: UIColor?, selectedColor: UIColor?) {
         self.init(frame: frame)
         
         guard let icon = faveIconNormal else{
             fatalError("missing image for normal state")
         }
         faveIconImage = icon
+        
+        if let color = normalColor {
+            self.normalColor = color
+        }
+        
+        if let color = selectedColor {
+            self.selectedColor = color
+        }
         
         applyInit()
     }

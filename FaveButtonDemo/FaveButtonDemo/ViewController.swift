@@ -33,6 +33,15 @@ class ViewController: UIViewController, FaveButtonDelegate{
         
         self.loveButton?.setSelected(selected: true, animated: false)
         self.loveButton?.setSelected(selected: false, animated: false)
+        
+        let faveButton = FaveButton(
+            frame: CGRect(x:200, y:200, width: 44, height: 44),
+            faveIconNormal: UIImage(named: "heart"),
+            normalColor: UIColor.red
+        )
+        faveButton.normalColor = UIColor.blue
+        faveButton.delegate = self
+        view.addSubview(faveButton)
     }
     
     let colors = [
